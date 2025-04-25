@@ -8,7 +8,6 @@ namespace ConsoleApp9
         {
             ChessMenu();
         }
-
         static void ChessMenu()
         {
             bool flag = true;
@@ -27,13 +26,11 @@ namespace ConsoleApp9
 
                 if (cX <= 0 || cY <= 0 || cX > 8 || cY > 8)
                 {
-
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Incorrect coordinates!!! Please, enter correct coordinates (X and Y) from 1 to 8:");
                     Console.ResetColor();
                     return;
                 }
-
                 ChessBoardBuilder(cX, cY);
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("If you want to exit the menu, type <<Exit>> or type <<Start>> to continue");
@@ -47,18 +44,14 @@ namespace ConsoleApp9
                     flag = false;
                     Console.ResetColor();
                 }
-
             } while (flag);
-
         }
-
         static void ChessBoardBuilder(int x, int y)
         {
             string[,] chessTable = new string[8, 8];
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.ResetColor();
             ChessLettersPrinter();
-
             for (int i = 1; i <= chessTable.GetLength(0); i++)
             {
                 Console.Write($" {i} ");
@@ -77,8 +70,7 @@ namespace ConsoleApp9
                     {
                         Console.Write("  ");
                     }
-
-                   
+    
                     Console.ForegroundColor = ConsoleColor.Gray;
                 }
                 Console.ResetColor();
@@ -86,8 +78,6 @@ namespace ConsoleApp9
             }
             ChessLettersPrinter();
         }
-     
-
         static void ChessLettersPrinter()
         {
             Console.Write("   ");
@@ -96,17 +86,6 @@ namespace ConsoleApp9
                 Console.Write($" {c}");
             }
             Console.WriteLine();
-
-
         }
-
-
-
-
-
-
-
-
-
     }
 }
